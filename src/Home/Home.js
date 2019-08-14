@@ -23,7 +23,7 @@ class Home extends Component {
         ]
 
         this.state = {
-            genres: [],
+            names: [],
             suggestions: [],
             text: ''
         }
@@ -34,13 +34,13 @@ class Home extends Component {
         api.loadGenres()
             .then((res) => {
                 this.setState({
-                    genres: res.data
+                    names: res.data
                 })
             })
     }
 
-    renderGenreInfo = (genre) => {
-        return (<span key={genre}>{`${genre} `}</span>)
+    renderBandInfo = (name) => {
+        return (<span key={name}>{`${name} `}</span>)
     }
 
     onTextChanged = (e) => {
@@ -67,25 +67,28 @@ class Home extends Component {
         if (suggestions.length === 0) {
             return null;
         }
-        return (
-            <ul>
-                {suggestions.map((item) => <li className="suggestion" onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
-            </ul>
-        )
+        else{
+            return (
+                <ul>
+                    {suggestions.map((item) => <li className="suggestion" onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
+                </ul>
+            )
+        }
     }
 
-    searchGenre = () => {
+    searchBand = () => {
         if (this.refs.search.value === "") {
             return;
         }
         else {
-            this.props.history.push('/bandas/' + this.refs.search.value)
+            let params = this.refs.search.value.toLowerCase()
+            this.props.history.push('/bandas/' + params)
         }
     }
 
     enterPress = (event) => {
         if (event.key === 'Enter') {
-            this.searchGenre()
+            this.searchBand()
         }
     }
 
@@ -98,13 +101,13 @@ class Home extends Component {
                 <div>
                     <div className="search-area">
                         <input value={text} ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
-                        <img src={search} onClick={this.searchGenre} alt="search" />
+                        <img src={search} onClick={this.searchBand} alt="search" />
                     </div>
                     {this.renderSuggestions()}
                 </div>
 
                 <section>
-                    <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
+                    <span>Exemplo:</span> {this.state.names.map(this.renderBandInfo)}
                 </section>
             </div>
         )

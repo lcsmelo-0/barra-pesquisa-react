@@ -2,7 +2,7 @@
   "bandas": [
     {
       "id": 1,
-      "name": "Racionais",
+      "name": "racionais",
       "genre": "hip-hop",
       "members":[
         "Mano Brown", "KL Jay", "Edi Rock", "Ice Blue"
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "name": "Metallica",
+      "name": "metallica",
       "genre": "rock",
       "members":[
         "James Hetfield", "Lars Ulrich", "Kirk Hammett", "Rob Trujillo"
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "name": "Molejo",
+      "name": "molejo",
       "genre": "pagode",
       "members":[
         "Anderson Leonardo", "Andrezinho", "William Araújo", "Claumirzinho", "Lúcio Nascimento", "Jimmy Batera"
@@ -31,10 +31,10 @@
       "image": "http://tenso.blog.br/molejo/img/molejo.png"
     }
   ],
-  "genres": [
-    "rock",
-    "hip-hop",
-    "pagode", 
-    "axe"
+  "names": [
+    "racionais",
+    "metallica",
+    "molejo", 
+    "teste"
     ]
 }

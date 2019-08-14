@@ -5,8 +5,8 @@ const api = axios.create({
 })
 
 
-export const loadGenres = () => api.get('genres')
-export const loadSeriesByGenres = (genre) => api.get('bandas?genre='+genre)
+export const loadGenres = () => api.get('names')
+export const loadSeriesByGenres = (name) => api.get('bandas?name='+name)
 
 const apis = {
     loadGenres,
