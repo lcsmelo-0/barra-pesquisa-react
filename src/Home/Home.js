@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter} from 'react-router-dom'
 
 import './Home.css'
 
@@ -30,7 +31,7 @@ class Home extends Component {
     }
 
     searchGenre = () =>{
-        console.log(this.refs.search.value)
+        this.props.history.push('/bandas/' + this.refs.search.value) 
     }
 
     enterPress = (event) => {
@@ -54,4 +55,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default withRouter(Home)
