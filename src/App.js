@@ -9,23 +9,8 @@ import arrow from './assets/images/arrow.png'
 
 import Home from './Home/Home'
 
-import api from './Api'
-
 
 class App extends Component{
-    constructor(props) {
-      super(props)
-
-      this.state = {
-          genres: [],
-      }
-  }
-
-  componentDidMount() {
-    api.loadGenres()
-      .then((res)=> console.log(res.data))
-  }
-
   render(){
     return(
       <Router>
