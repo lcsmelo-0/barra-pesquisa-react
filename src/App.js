@@ -11,6 +11,14 @@ import Home from './Home/Home';
 
 
 class App extends Component{
+    constructor(props) {
+      super(props)
+
+      this.state = {
+          genres: [],
+      }
+  }
+  
   render(){
     return(
       <Router>
