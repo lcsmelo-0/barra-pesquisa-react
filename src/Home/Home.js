@@ -11,33 +11,40 @@ import api from '../Api'
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.items = [
-            "rock",
-            "hip-hop",
-            "pagode",
-            "axe"
-        ]
-
         this.state = {
-            genres: []
+            genres: [],
+            suggestions: []
         }
     }
 
+    
     componentDidMount() {
         api.loadGenres()
-            .then((res) => {
-                this.setState({
-                    genres: res.data
+        .then((res) => {
+            this.setState({
+                genres: res.data
                 })
             })
     }
-
+    
     renderGenreInfo = (genre) => {
         return (<span key={genre}>{`${genre} `}</span>)
     }
-
+    
     renderGenreAutoComplete = (genre) => {
         return (<li key={genre}>{`${genre} `}</li>)
+    }
+    
+    onTextChanged = (e) => {
+        const value = e.target.value
+        let suggestions = []
+        if(value.length > 0){
+            const regex = new RegExp(`^${value}`, 'i')
+            suggestions = this.state.genres.sort().filter(v => v.test(regex))
+        }
+        this.setState(()=>({
+            suggestions
+        }))
     }
 
     searchGenre = () => {
@@ -60,7 +67,7 @@ class Home extends Component {
             <div className="Home">
                 <div>
                     <div className="search-area">
-                        <input ref="search" onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
+                        <input ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
                         <img src={search} onClick={this.searchGenre} alt="search" />
                     </div>
                     <ul>
