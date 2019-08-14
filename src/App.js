@@ -6,7 +6,9 @@ import './App.css'
 import logo from './assets/images/logo.svg'
 import user from './assets/images/user.png'
 import arrow from './assets/images/arrow.png'
+
 import Home from './Home/Home';
+
 
 class App extends Component{
   render(){
