@@ -7,7 +7,9 @@ import logo from './assets/images/logo.svg'
 import user from './assets/images/user.png'
 import arrow from './assets/images/arrow.png'
 
-import Home from './Home/Home';
+import Home from './Home/Home'
+
+import api from './Api'
 
 
 class App extends Component{
@@ -18,7 +20,12 @@ class App extends Component{
           genres: [],
       }
   }
-  
+
+  componentDidMount() {
+    api.loadGenres()
+      .then((res)=> console.log(res.data))
+  }
+
   render(){
     return(
       <Router>
