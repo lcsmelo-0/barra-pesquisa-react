@@ -33,6 +33,7 @@
     border: none;
     color: #797979;
     outline: none;
+    width: 80%;
 }
 
 .search-area input::placeholder{

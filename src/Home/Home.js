@@ -30,6 +30,9 @@ class Home extends Component {
                 })
                 return
             })
+            .catch((error)=>{
+                console.error(error)
+            })
     }
 
 
@@ -76,7 +79,7 @@ class Home extends Component {
 
     searchBand = () => {
         if (this.refs.search.value === "") {
-            return;
+            return console.error("ERRO: Digite o nome de uma banda para pesquisar");
         }
         else {
             let params = this.refs.search.value.toLowerCase()
@@ -99,7 +102,7 @@ class Home extends Component {
             <div className="Home">
                 <div>
                     <div className="search-area">
-                        <input value={text} ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
+                        <input value={text} ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo nome  ..." />
                         <img src={search} onClick={this.searchBand} alt="search" />
                     </div>
                     {this.renderSuggestions()}

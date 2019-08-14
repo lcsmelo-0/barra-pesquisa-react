@@ -23,6 +23,9 @@ class Bands extends Component {
                 bands: res.data
             })
         })
+        .catch((error) =>{
+            console.error(error)
+        })
     }
 
 

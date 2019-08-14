@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './App.css'
 
-// import logo from './assets/images/logo.svg'
+import logo from './assets/images/logo.svg'
 import user from './assets/images/user.png'
 import arrow from './assets/images/arrow.png'
 
@@ -18,7 +18,7 @@ class App extends Component {
         <div className="App">
           <nav className="NavBar">
             <a href="/">
-              {/* <img className="logo" src={logo} alt="logo acesso" /> */}
+              <img className="logo" src={logo} alt="logo acesso" />
             </a>
 
             {/* USER ACCESS */}
