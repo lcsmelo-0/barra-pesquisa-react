@@ -31,6 +31,10 @@ class Bands extends Component {
         return pessoas;
     }
 
+    capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+    }
 
     renderSeries = (bands) => {
         return (
@@ -38,9 +42,9 @@ class Bands extends Component {
                 <img alt="band logo" className="logos-bands" src={bands.image} />
                 <div className="infos">
                     <h2>{bands.name}</h2>
-                    <h2><span>Membros:</span>{this.printMembers()}</h2>
-                    <h2><span>Gênero:</span> {bands.genre}</h2>
-                    <h2><span>Comentário:</span> {bands.comment}</h2>
+                    <h2><span>Membros: </span>{this.printMembers()}</h2>
+                    <h2><span>Gênero: </span> {this.capitalize(bands.genre)}</h2>
+                    <h2><span>Comentário: </span> {bands.comment}</h2>
                 </div>
             </div>
         )
@@ -48,10 +52,12 @@ class Bands extends Component {
 
 
 
+
+
     render() {
         return (
             <div className="Bands">
-                <h2>Resultados de busca para: <span>"{this.props.match.params.genre}"</span> </h2>
+                <h2>Resultados de busca para: <span>" {this.capitalize(this.props.match.params.genre)}"</span> </h2>
                 <div className="result-list">
                     {
                         this.state.bands.length === 0 &&
