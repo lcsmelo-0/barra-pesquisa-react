@@ -1,0 +1,20 @@
+.Home{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    justify-content: center;
+    width: 100%;
+}
+
+.search-area{
+    align-items: center;
+    border: 0.6px solid #b8b8b8;
+    border-radius: 20px;
+    display: flex;
+    height: 35px;
+    justify-content: space-around;
+    outline: none;
+    padding-left: 10px;
+    width: 350px;
+}

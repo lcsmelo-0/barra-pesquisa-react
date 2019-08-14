@@ -10,7 +10,7 @@ class Home extends Component{
     return(
       <div className="Home">
         <div className="search-area">
-            <input  autoFocus type="text" placeholder="Pesquisar pelo gênero ..."/>
+            <input ref="search"  autoFocus type="text" placeholder="Pesquisar pelo gênero ..."/>
             <img src={search} alt="search"/>
         </div>
 
