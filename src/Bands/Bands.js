@@ -13,6 +13,14 @@ class Bands extends Component {
         }
     }
 
+    componentDidMount() {
+        api.loadSeriesByGenres(this.props.match.params.genre).then((res) => {
+            this.setState({
+                bands: res.data
+            })
+        })
+    }
+
     render() {
         return (
             <div className="Bands">
