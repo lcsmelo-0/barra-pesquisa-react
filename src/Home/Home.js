@@ -15,7 +15,11 @@ class Home extends Component {
             "rock",
             "hip-hop",
             "pagode",
-            "axe"
+            "axe",
+            "samba",
+            "reggaeton",
+            "reggae",
+            "mpb"
         ]
 
         this.state = {
