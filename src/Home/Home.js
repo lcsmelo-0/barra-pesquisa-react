@@ -11,10 +11,10 @@ import api from '../Api'
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.items=[
+        this.items = [
             "rock",
             "hip-hop",
-            "pagode", 
+            "pagode",
             "axe"
         ]
 
@@ -25,40 +25,47 @@ class Home extends Component {
         }
     }
 
-    
+
     componentDidMount() {
         api.loadGenres()
-        .then((res) => {
-            this.setState({
-                genres: res.data
+            .then((res) => {
+                this.setState({
+                    genres: res.data
                 })
             })
     }
-    
+
     renderGenreInfo = (genre) => {
         return (<span key={genre}>{`${genre} `}</span>)
     }
-    
+
     onTextChanged = (e) => {
         const value = e.target.value
         let suggestions = []
-        if(value.length > 0){
+        if (value.length > 0) {
             const regex = new RegExp(`^${value}`, 'i')
             suggestions = this.items.sort().filter(v => regex.test(v))
         }
-        this.setState(()=>({
+        this.setState(() => ({
             suggestions, text: value
         }))
     }
 
-    renderSuggestions = () =>{
+    suggestionSelected = (value) => {
+        this.setState(() => ({
+            text: value,
+            suggestions: [],
+        }))
+    }
+
+    renderSuggestions = () => {
         const { suggestions } = this.state
-        if(suggestions.length === 0 ) {
+        if (suggestions.length === 0) {
             return null;
         }
-        return(
+        return (
             <ul>
-                {suggestions.map((item) =><li key={item}>{item}</li>)}
+                {suggestions.map((item) => <li onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
             </ul>
         )
     }
@@ -77,6 +84,8 @@ class Home extends Component {
             this.searchGenre()
         }
     }
+
+
 
     render() {
         const { text } = this.state
