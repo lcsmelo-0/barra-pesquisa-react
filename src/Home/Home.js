@@ -11,9 +11,8 @@ import api from '../Api'
 class Home extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            genres: [],
+            genres: []
         }
     }
 
