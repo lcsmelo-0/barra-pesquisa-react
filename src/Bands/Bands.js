@@ -42,7 +42,12 @@ class Bands extends Component {
         return (
             <div className="Bands">
                 <h2>Resultados de busca para: <span>"{this.props.match.params.genre}"</span> </h2>
-                
+                <div className="result-list">
+                    <div className="row list-group">
+                        {this.state.bands.map(this.renderSeries)}
+                    </div>
+
+                </div>
                 <Link className="botao" to="/">Voltar</Link>
             </div>  
         )
