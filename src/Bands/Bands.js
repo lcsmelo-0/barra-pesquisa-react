@@ -23,6 +23,14 @@ class Bands extends Component {
         })
     }
 
+    printMembers = () => {
+        let pessoas = "";
+        for (let person of this.state.bands) {
+            pessoas += `${person.members}, `
+        }
+        return pessoas;
+    }
+
 
     renderSeries = (bands) => {
         return (
@@ -30,13 +38,15 @@ class Bands extends Component {
                 <img alt="band logo" className="logos-bands" src={bands.image} />
                 <div className="infos">
                     <h2>{bands.name}</h2>
-                    <h2><span>Membros:</span></h2>
+                    <h2><span>Membros:</span>{this.printMembers()}</h2>
                     <h2><span>Gênero:</span> {bands.genre}</h2>
                     <h2><span>Comentário:</span> {bands.comment}</h2>
                 </div>
             </div>
         )
     }
+
+
 
     render() {
         return (
@@ -53,9 +63,9 @@ class Bands extends Component {
 
                 </div>
                 <Link className="botao" to="/">Voltar</Link>
-            </div>  
+            </div>
         )
     }
 }
 
-export default Bands;
+export default Bands
