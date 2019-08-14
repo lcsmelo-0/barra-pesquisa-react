@@ -7,6 +7,16 @@
     width: 100%;
 }
 
+.Home section{
+    margin-top: 10px;
+}
+
+.Home section span{
+    color: #797979;
+    font-style: italic;
+    font-size: 11pt;
+}
+
 .search-area{
     align-items: center;
     border: 0.6px solid #b8b8b8;

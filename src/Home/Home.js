@@ -38,8 +38,7 @@ class Home extends Component {
                     <img src={search} alt="search" />
                 </div>
                 <section>
-                   {this.state.genres.map(this.renderGenreInfo)}
-
+                   <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
                 </section>
 
             </div>
