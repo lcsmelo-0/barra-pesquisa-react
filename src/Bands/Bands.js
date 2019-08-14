@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import './Bands.css'
 
+import api from '../Api'
+
 
 class Bands extends Component {
     constructor(props) {
@@ -19,6 +21,21 @@ class Bands extends Component {
                 bands: res.data
             })
         })
+    }
+
+
+    renderSeries = (bands) => {
+        return (
+            <div key={bands.id} className="ResultSearch">
+                <img alt="band logo" className="logos-bands" src={bands.image} />
+                <div className="infos">
+                    <h2>{bands.name}</h2>
+                    <h2><span>Membros:</span></h2>
+                    <h2><span>Gênero:</span> {bands.genre}</h2>
+                    <h2><span>Comentário:</span> {bands.comment}</h2>
+                </div>
+            </div>
+        )
     }
 
     render() {

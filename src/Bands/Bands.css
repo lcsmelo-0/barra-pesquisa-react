@@ -19,6 +19,24 @@
     font-weight: 900;
 }
 
+.infos h2:nth-child(1){
+    font-size: 18pt;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ef057e;
+}
+
+.infos h2{
+    font-size: 1.125em;
+    font-weight: 100;
+    color: rgb(144, 147, 161);
+}
+
+.infos h2 span{
+    font-weight: 900;
+    color: #ef057e;
+}
+
 .Bands .botao{
     background-color: #ef057e;
     border: none;
