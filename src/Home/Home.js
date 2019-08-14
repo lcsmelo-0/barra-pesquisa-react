@@ -30,7 +30,7 @@ class Home extends Component {
     }
 
     searchGenre = () =>{
-        console.log("teste")
+        console.log(this.refs.search.value)
     }
 
     enterPress = (event) => {
@@ -49,10 +49,9 @@ class Home extends Component {
                 <section>
                     <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
                 </section>
-
             </div>
         )
     }
 }
 
-export default Home;
+export default Home

@@ -8,6 +8,7 @@ import user from './assets/images/user.png'
 import arrow from './assets/images/arrow.png'
 
 import Home from './Home/Home'
+import Bands from './Bands/Bands'
 
 
 class App extends Component{
@@ -28,10 +29,11 @@ class App extends Component{
             </div>
           </nav>
         <Route exact path="/" component={Home} />
+        <Route path="/bandas/:genre" component={Bands} />
         </div>
       </Router>
     )
   }
 }
 
-export default App;
+export default App
