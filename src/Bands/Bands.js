@@ -45,15 +45,6 @@ class Bands extends Component {
     }
 
 
-    upperCaseAll = (s) => {
-        if (typeof s !== 'string') {
-            return
-        } else {
-            return s.toUpperCase()
-        }
-    }
-
-
     renderBands = (bands) => {
         return (
             <div key={bands.id} className="ResultSearch">
