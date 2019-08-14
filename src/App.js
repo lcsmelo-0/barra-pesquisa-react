@@ -1,4 +1,4 @@
-import React, { Component }from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import './App.css'
@@ -11,9 +11,9 @@ import Home from './Home/Home'
 import Bands from './Bands/Bands'
 
 
-class App extends Component{
-  render(){
-    return(
+class App extends Component {
+  render() {
+    return (
       <Router>
         <div className="App">
           <nav className="NavBar">
@@ -28,8 +28,8 @@ class App extends Component{
               <img className="arrow" src={arrow} alt="arrow icon" />
             </div>
           </nav>
-        <Route exact path="/" component={Home} />
-        <Route path="/bandas/:genre" component={Bands} />
+          <Route exact path="/" component={Home} />
+          <Route path="/bandas/:name" component={Bands} />
         </div>
       </Router>
     )

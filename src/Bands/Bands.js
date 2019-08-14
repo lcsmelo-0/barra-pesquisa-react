@@ -15,13 +15,15 @@ class Bands extends Component {
         }
     }
 
+
     componentDidMount() {
-        api.loadSeriesByGenres(this.props.match.params.genre).then((res) => {
+        api.loadBandsByName(this.props.match.params.name).then((res) => {
             this.setState({
                 bands: res.data
             })
         })
     }
+
 
     printMembers = () => {
         let pessoas = "";
@@ -31,24 +33,26 @@ class Bands extends Component {
         return pessoas;
     }
 
+
     upperCaseFirst = (s) => {
-        if (typeof s !== 'string'){
-            return  
-        } else{
+        if (typeof s !== 'string') {
+            return
+        } else {
             return s.charAt(0).toUpperCase() + s.slice(1)
 
         }
     }
 
-    upperCaseAll = (s) =>{
-        if(typeof s !== 'string'){
+
+    upperCaseAll = (s) => {
+        if (typeof s !== 'string') {
             return
-        }
-        else{
+        } else {
             return s.toUpperCase()
         }
     }
 
+    
     renderBands = (bands) => {
         return (
             <div key={bands.id} className="ResultSearch">

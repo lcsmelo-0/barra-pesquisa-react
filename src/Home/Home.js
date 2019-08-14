@@ -11,16 +11,7 @@ import api from '../Api'
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.items = [
-            "rock",
-            "hip-hop",
-            "pagode",
-            "axe",
-            "samba",
-            "reggaeton",
-            "reggae",
-            "mpb"
-        ]
+        this.items = []
 
         this.state = {
             names: [],
@@ -31,17 +22,21 @@ class Home extends Component {
 
 
     componentDidMount() {
-        api.loadGenres()
+        api.loadName()
             .then((res) => {
+                this.items = res.data
                 this.setState({
                     names: res.data
                 })
+                return
             })
     }
+
 
     renderBandInfo = (name) => {
         return (<span key={name}>{`${name} `}</span>)
     }
+
 
     onTextChanged = (e) => {
         const value = e.target.value
@@ -55,6 +50,7 @@ class Home extends Component {
         }))
     }
 
+
     suggestionSelected = (value) => {
         this.setState(() => ({
             text: value,
@@ -62,12 +58,13 @@ class Home extends Component {
         }))
     }
 
+
     renderSuggestions = () => {
         const { suggestions } = this.state
         if (suggestions.length === 0) {
             return null;
         }
-        else{
+        else {
             return (
                 <ul>
                     {suggestions.map((item) => <li className="suggestion" onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
@@ -75,6 +72,7 @@ class Home extends Component {
             )
         }
     }
+
 
     searchBand = () => {
         if (this.refs.search.value === "") {
@@ -85,6 +83,7 @@ class Home extends Component {
             this.props.history.push('/bandas/' + params)
         }
     }
+    
 
     enterPress = (event) => {
         if (event.key === 'Enter') {
