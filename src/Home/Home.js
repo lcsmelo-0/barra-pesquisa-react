@@ -33,11 +33,17 @@ class Home extends Component {
         console.log("teste")
     }
 
+    enterPress = (event) => {
+        if (event.key === 'Enter') {
+          this.searchGenre()
+        }
+    }
+
     render() {
         return (
             <div className="Home">
                 <div className="search-area">
-                    <input ref="search" autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
+                    <input ref="search" onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
                     <img src={search} onClick={this.searchGenre} alt="search" />
                 </div>
                 <section>
