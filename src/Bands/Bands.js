@@ -16,6 +16,7 @@ class Bands extends Component {
     render() {
         return (
             <div className="Bands">
+                <h2>Resultados de busca para: <span>Racionais Mc's</span> </h2>
                 
                 <Link className="botao" to="/">Voltar</Link>
             </div>  

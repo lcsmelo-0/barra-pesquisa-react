@@ -9,6 +9,16 @@
     width: 100%;
 }
 
+.Bands h2{
+    color: rgb(144, 147, 161);
+    font-weight: 600;
+}
+
+.Bands h2 span{
+    color: #ef057e;
+    font-weight: 900;
+}
+
 .Bands .botao{
     background-color: #ef057e;
     border: none;

@@ -26,16 +26,16 @@ class Home extends Component {
     }
 
     renderGenreInfo = (genre) => {
-        if(this.refs.search.value ===""){
+        return (<span key={genre}>{`${genre} `}</span>)
+    }
+
+    searchGenre = () => {
+        if(this.refs.search.value === ""){
             return;
         }
         else{
-            return (<span key={genre}>{`${genre} `}</span>)
+            this.props.history.push('/bandas/' + this.refs.search.value) 
         }
-    }
-
-    searchGenre = () =>{
-        this.props.history.push('/bandas/' + this.refs.search.value) 
     }
 
     enterPress = (event) => {
