@@ -1,0 +1,18 @@
+.Bands .botao{
+    background-color: #ef057e;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    height: 55px;
+    line-height: 46px;
+    text-align: center;
+    text-decoration:none;
+    transition: 0.2s;
+    width: 150px;
+}
+
+.Bands .botao:hover{
+    background-color: #ef057ece;
+}

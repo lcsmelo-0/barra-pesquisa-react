@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import './Bands.css'
 
@@ -11,12 +12,13 @@ class Bands extends Component {
             bands: []
         }
     }
-    
+
     render() {
         return (
             <div className="Bands">
-                teste
-     </div>
+                
+                <Link className="botao" to="/">Voltar</Link>
+            </div>  
         )
     }
 }
