@@ -42,3 +42,10 @@
 .search-area  img{
     cursor: pointer;
 }
+
+ul{
+    position: relative;
+    top: 5px;
+    left: 10px;
+    list-style-type: none;
+}

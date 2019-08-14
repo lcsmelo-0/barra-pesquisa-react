@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import './Home.css'
 
@@ -11,6 +11,13 @@ import api from '../Api'
 class Home extends Component {
     constructor(props) {
         super(props)
+        this.items = [
+            "rock",
+            "hip-hop",
+            "pagode",
+            "axe"
+        ]
+
         this.state = {
             genres: []
         }
@@ -29,28 +36,38 @@ class Home extends Component {
         return (<span key={genre}>{`${genre} `}</span>)
     }
 
+    renderGenreAutoComplete = (genre) => {
+        return (<li key={genre}>{`${genre} `}</li>)
+    }
+
     searchGenre = () => {
-        if(this.refs.search.value === ""){
+        if (this.refs.search.value === "") {
             return;
         }
-        else{
-            this.props.history.push('/bandas/' + this.refs.search.value) 
+        else {
+            this.props.history.push('/bandas/' + this.refs.search.value)
         }
     }
 
     enterPress = (event) => {
         if (event.key === 'Enter') {
-          this.searchGenre()
+            this.searchGenre()
         }
     }
 
     render() {
         return (
             <div className="Home">
-                <div className="search-area">
-                    <input ref="search" onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
-                    <img src={search} onClick={this.searchGenre} alt="search" />
+                <div>
+                    <div className="search-area">
+                        <input ref="search" onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
+                        <img src={search} onClick={this.searchGenre} alt="search" />
+                    </div>
+                    <ul>
+                        {this.state.genres.map(this.renderGenreAutoComplete)}
+                    </ul>
                 </div>
+
                 <section>
                     <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
                 </section>
