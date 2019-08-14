@@ -43,7 +43,11 @@ class Bands extends Component {
             <div className="Bands">
                 <h2>Resultados de busca para: <span>"{this.props.match.params.genre}"</span> </h2>
                 <div className="result-list">
-                    <div className="row list-group">
+                    {
+                        this.state.bands.length === 0 &&
+                        <div className="alert-info">Nenhuma banda de {this.props.match.params.genre} cadastrada</div>
+                    }
+                    <div>
                         {this.state.bands.map(this.renderSeries)}
                     </div>
 

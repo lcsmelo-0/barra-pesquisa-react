@@ -54,3 +54,16 @@
 .Bands .botao:hover{
     background-color: #ef057ece;
 }
+
+.alert-info{
+    align-items: center;
+    background-color: #297fff86;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    font-style: italic;
+    height: 60px;
+    justify-content: center;
+    margin: 20px 0;
+    width: 80vw;
+}
