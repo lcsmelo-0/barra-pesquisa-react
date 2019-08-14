@@ -10,7 +10,7 @@
     width: 100%;
 }
 
-.Bands div:first-child{
+.Bands .title{
     height: auto;
     text-align: left;
     margin: 0 0 20px 20px;

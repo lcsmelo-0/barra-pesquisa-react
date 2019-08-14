@@ -98,13 +98,13 @@ class Bands extends Component {
     render() {
         return (
             <div className="Bands">
-                <div>
+                <div className="title">
                     <h2>Resultados de busca para: <span>"{this.upperCaseFirst(this.props.match.params.name)}"</span> </h2>
                 </div>
                 <div className="result-list">
                     {
                         this.state.bands.length === 0 &&
-                        <div className="alert-info">Nenhuma banda de {this.props.match.params.name} cadastrada</div>
+                        <div className="alert-info">Nenhuma banda de "{this.upperCaseFirst(this.props.match.params.name)}" cadastrada</div>
                     }
                     <div>
                         {this.state.bands.map(this.renderBands)}
