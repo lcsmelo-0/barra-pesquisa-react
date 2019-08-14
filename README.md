@@ -5,7 +5,9 @@ Este projeto foi iniciado através do [Create React App](https://github.com/face
 
 Digite o seu estilo musical favorito, e conheça as bandas cadastradas.
 ---
-Para cadastrar novas bandas, adicione no arquivo db.json.
+- Para cadastrar novas bandas, adicione no arquivo db.json.
+- Você pode selecionar sua banda através do gênero musical
+- O campo de pesquisa apresenta sugestões de autocomplete
 
 ### Executando o projeto local
 
