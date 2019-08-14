@@ -18,3 +18,17 @@
     padding-left: 10px;
     width: 350px;
 }
+
+.search-area  input{
+    border: none;
+    color: #797979;
+    outline: none;
+}
+
+.search-area input::placeholder{
+    font-style: italic;
+}
+
+.search-area  img{
+    cursor: pointer;
+}

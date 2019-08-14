@@ -15,21 +15,19 @@ class App extends Component{
     return(
       <Router>
         <div className="App">
-          <div className="App">
-            <nav className="NavBar">
-              <a href="/">
-                <img className="logo" src={logo} alt="logo acesso" />
-              </a>
+          <nav className="NavBar">
+            <a href="/">
+              <img className="logo" src={logo} alt="logo acesso" />
+            </a>
 
-              {/* USER ACCESS */}
-              <div className="user-access">
-                <img src={user} alt="person icon" />
-                <p>John Due</p>
-                <img className="arrow" src={arrow} alt="arrow icon" />
-              </div>
-            </nav>
-          </div>
-          <Route exact path="/" component={Home} />
+            {/* USER ACCESS */}
+            <div className="user-access">
+              <img src={user} alt="person icon" />
+              <p>John Due</p>
+              <img className="arrow" src={arrow} alt="arrow icon" />
+            </div>
+          </nav>
+        <Route exact path="/" component={Home} />
         </div>
       </Router>
     )
