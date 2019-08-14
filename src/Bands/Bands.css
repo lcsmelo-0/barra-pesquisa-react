@@ -71,3 +71,15 @@
 .logos-bands{
     width: 150px;
 }
+
+.suggestion{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    width: 80%;
+}
+
+.suggestion:hover{
+    background-color:#c8c8c8;
+}

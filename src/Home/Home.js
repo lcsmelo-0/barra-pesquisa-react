@@ -65,7 +65,7 @@ class Home extends Component {
         }
         return (
             <ul>
-                {suggestions.map((item) => <li onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
+                {suggestions.map((item) => <li className="suggestion" onClick={() => this.suggestionSelected(item)} key={item}>{item}</li>)}
             </ul>
         )
     }
