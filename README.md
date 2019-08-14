@@ -3,10 +3,10 @@ Este projeto foi iniciado através do [Create React App](https://github.com/face
 
 # Barra de pesquisa - REACT
 
-Digite o seu estilo musical favorito, e conheça as bandas cadastradas.
+Digite a sua banda favorita e saiba tudo sobre ela.
 ---
 - Para cadastrar novas bandas, adicione no arquivo db.json.
-- Você pode selecionar sua banda através do gênero musical
+- Você pode selecionar sua banda através do nome do grupo
 - O campo de pesquisa apresenta sugestões de autocomplete
 
 ### Executando o projeto local
