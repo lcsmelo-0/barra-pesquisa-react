@@ -27,7 +27,12 @@ class Home extends Component {
     }
 
     renderGenreInfo = (genre) => {
-        return (<span key={genre}>{`${genre} `}</span>)
+        if(this.refs.search.value ===""){
+            return;
+        }
+        else{
+            return (<span key={genre}>{`${genre} `}</span>)
+        }
     }
 
     searchGenre = () =>{
