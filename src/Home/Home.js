@@ -25,9 +25,9 @@ class Home extends Component {
             })
     }
 
-    renderGenreInfo = (genre) =>{
-        return(<span key={genre}>{`${genre} `}</span>)
-      }
+    renderGenreInfo = (genre) => {
+        return (<span key={genre}>{`${genre} `}</span>)
+    }
 
 
     render() {
@@ -35,10 +35,10 @@ class Home extends Component {
             <div className="Home">
                 <div className="search-area">
                     <input ref="search" autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
-                    <img src={search} alt="search" />
+                    <img src={search} onClick={()=>console.log("teste")} alt="search" />
                 </div>
                 <section>
-                   <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
+                    <span>Exemplo:</span> {this.state.genres.map(this.renderGenreInfo)}
                 </section>
 
             </div>
