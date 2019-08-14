@@ -20,7 +20,8 @@ class Home extends Component {
 
         this.state = {
             genres: [],
-            suggestions: []
+            suggestions: [],
+            text: ''
         }
     }
 
@@ -46,7 +47,7 @@ class Home extends Component {
             suggestions = this.items.sort().filter(v => regex.test(v))
         }
         this.setState(()=>({
-            suggestions
+            suggestions, text: value
         }))
     }
 
@@ -78,11 +79,12 @@ class Home extends Component {
     }
 
     render() {
+        const { text } = this.state
         return (
             <div className="Home">
                 <div>
                     <div className="search-area">
-                        <input ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
+                        <input value={text} ref="search" onChange={this.onTextChanged} onKeyDown={this.enterPress} autoFocus type="text" placeholder="Pesquisar pelo gênero ..." />
                         <img src={search} onClick={this.searchGenre} alt="search" />
                     </div>
                     {this.renderSuggestions()}
