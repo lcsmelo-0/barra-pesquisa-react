@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import './Bands.css'
+import user from '../assets/images/user.png'
 
 import api from '../Api'
 
@@ -28,7 +29,7 @@ class Bands extends Component {
     printMembers = () => {
         let pessoas = "";
         for (let person of this.state.bands) {
-            pessoas += `${person.members}, `
+            pessoas += `${person.members}`
         }
         return pessoas;
     }
@@ -52,17 +53,52 @@ class Bands extends Component {
         }
     }
 
-    
+
     renderBands = (bands) => {
         return (
             <div key={bands.id} className="ResultSearch">
                 <img alt="band logo" className="logos-bands" src={bands.image} />
-                <div className="infos">
-                    <h2>{bands.name}</h2>
-                    <h2><span>Membros: </span>{this.printMembers()}</h2>
-                    <h2><span>Gênero: </span> {this.upperCaseFirst(bands.genre)}</h2>
-                    <h2><span>Comentário: </span> {bands.comment}</h2>
-                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th> </th>
+                            <th>Nome:</th>
+                            <th>Gênero:</th>
+                            <th>Grupo:</th>
+                            <th>Idade:</th>
+                        </tr>
+                        <tr>
+                            <td><img alt="member" src={user} /></td>
+                            <td>{this.upperCaseFirst(bands.member1)}</td>
+                            <td>{this.upperCaseFirst(bands.genre)}</td>
+                            <td>{this.upperCaseFirst(bands.name)}</td>
+                            <td>{bands.idade1} anos</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="member" src={user} /></td>
+                            <td>{this.upperCaseFirst(bands.member2)}</td>
+                            <td>{this.upperCaseFirst(bands.genre)}</td>
+                            <td>{this.upperCaseFirst(bands.name)}</td>
+                            <td>{bands.idade2} anos</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="member" src={user} /></td>
+                            <td>{this.upperCaseFirst(bands.member3)}</td>
+                            <td>{this.upperCaseFirst(bands.genre)}</td>
+                            <td>{this.upperCaseFirst(bands.name)}</td>
+                            <td>{bands.idade3} anos</td>
+                        </tr>
+                        <tr>
+                            <td><img alt="member" src={user} /></td>
+
+                            <td>{this.upperCaseFirst(bands.member4)}</td>
+                            <td>{this.upperCaseFirst(bands.genre)}</td>
+                            <td>{this.upperCaseFirst(bands.name)}</td>
+                            <td>{bands.idade4} anos</td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
         )
     }
@@ -71,7 +107,9 @@ class Bands extends Component {
     render() {
         return (
             <div className="Bands">
-                <h2>Resultados de busca para: <span>"{this.upperCaseFirst(this.props.match.params.name)}"</span> </h2>
+                <div>
+                    <h2>Resultados de busca para: <span>"{this.upperCaseFirst(this.props.match.params.name)}"</span> </h2>
+                </div>
                 <div className="result-list">
                     {
                         this.state.bands.length === 0 &&

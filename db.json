@@ -4,30 +4,42 @@
       "id": 1,
       "name": "racionais",
       "genre": "hip-hop",
-      "members":[
-        "Mano Brown", "KL Jay", "Edi Rock", "Ice Blue"
-      ],
-      "comment": "É um grupo brasileiro de rap, fundado em 1988, e formado pelos mc's Mano Brown, Edi Rock e Ice Blue e o DJ KL Jay. É o maior grupo de Rap do Brasil e está entre as bandas mais influentes do país. Suas canções demonstram a preocupação em denunciar a destruição da vida de jovens negros e pobres das periferias brasileiras e o resultado do racismo e do preconceito, ao sustentarem a miséria diretamente ligada com a violência e o crime.",
+      "member1":"Mano Brown",
+      "member2": "KL Jay",
+      "member3": "Edi Rock",
+      "member4": "Ice Blue",
+      "idade1": "51",
+      "idade2": "49",
+      "idade3": "48",
+      "idade4": "50",
       "image": "https://gartic.com.br/imgs/mural/su/supersiniistro/racionais-mc-s.png"
     },
     {
       "id": 2,
       "name": "metallica",
       "genre": "rock",
-      "members":[
-        "James Hetfield", "Lars Ulrich", "Kirk Hammett", "Rob Trujillo"
-      ],
-      "comment": "É uma banda norte-americana de heavy metal originária de Los Angeles, mas com base em San Francisco. O seu repertório inclui tempos rápidos, pesados, melódicos, instrumentais e musicalidade agressiva, a qual os colocou no lugar de pioneiros do thrash metal e uma das bandas fundadoras do Big Four of Thrash, conjuntamente com Slayer, Megadeth e Anthrax.",
+      "member1":"James Hetfield",
+      "member2": "Lars Ulrich",
+      "member3": "Kirk Hammett",
+      "member4": "Rob Trujillo",
+      "idade1": "51",
+      "idade2": "49",
+      "idade3": "48",
+      "idade4": "50",
       "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Metallica_logo.png"
     },
     {
       "id": 3,
       "name": "molejo",
       "genre": "pagode",
-      "members":[
-        "Anderson Leonardo", "Andrezinho", "William Araújo", "Claumirzinho", "Lúcio Nascimento", "Jimmy Batera"
-      ],
-      "comment": "É uma banda de Pagode e Heavy Metal que inventou todos os gêneros musicais que Você ouve e vendeu bilhões e bilhões de cópias pelo Universo a fora.",
+      "member1":"Anderson Leonardo",
+      "member2": "Andrezinho",
+      "member3": "William Araújo",
+      "member4": "Claumirzinho",
+      "idade1": "51",
+      "idade2": "49",
+      "idade3": "48",
+      "idade4": "50",
       "image": "http://tenso.blog.br/molejo/img/molejo.png"
     }
   ],
@@ -35,6 +47,6 @@
     "racionais",
     "metallica",
     "molejo", 
-    "teste"
+    "system of a down"
     ]
 }
